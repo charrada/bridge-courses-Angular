@@ -3,6 +3,10 @@
       <a routerLink="/add" class="btn btn-success">Add Course</a>
     </div>
   
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm">
+      </div>
+      
     <div class="table-responsive"> 
       <table class="table table-striped">
         <thead class="thead-dark">
@@ -33,7 +37,7 @@
       </table>
     </div>
   
-    <!-- Modal -->
+    <!-- Modal delete -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
