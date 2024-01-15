@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { course } from 'src/app/models/course.model';
 import { CoursesService } from '../../courses.service';
 import { Router } from '@angular/router';
+declare var $: any;  //declare jQuery
 
 @Component({
   selector: 'app-all-courses-admin',
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
 export class AllCoursesAdminComponent {
   courses: course[] = [];
   searchTerm: string = '';
+  courseToDelete: course | null = null; 
+
   constructor(private coursesService: CoursesService, private router: Router) { }
 
   ngOnInit(): void {
@@ -24,7 +27,6 @@ export class AllCoursesAdminComponent {
       },
       (error) => {
         console.error('Error loading courses:', error);
-        // Handle error (e.g., display an error message)
       }
     );
   }
@@ -34,4 +36,23 @@ export class AllCoursesAdminComponent {
       course.nameCourse.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
   }
+
+  confirmDelete(course: course): void {
+    this.courseToDelete = course;  
+    $('#deleteModal').modal('show');  
+  }
+  closeDelete(): void {
+    $('#deleteModal').modal('hide');
+  }
+
+  deleteCourse(): void {
+    if (this.courseToDelete) {
+      console.log('Deleting course:', this.courseToDelete);
+    }
+    
+    $('#deleteModal').modal('hide');
+  }
+
+
+
 }
