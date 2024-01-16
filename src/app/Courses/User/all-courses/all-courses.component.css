@@ -1,0 +1,29 @@
+
+
+.navbar {
+    background-color:white; 
+    padding: 10px 0; 
+
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+}
+
+
+
+.logo {
+    margin-left: 10px; 
+}
+
+
+@media (max-width: 880px) {
+    .contact-form {
+        border-radius: 0!important;
+    }
+}
+
+
+
+
+
+
