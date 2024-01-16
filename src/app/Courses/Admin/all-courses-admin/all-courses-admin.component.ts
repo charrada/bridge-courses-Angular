@@ -55,16 +55,25 @@ export class AllCoursesAdminComponent implements OnInit {
 
   deleteCourse(): void {
     if (this.courseToDelete) {
-      this.coursesService.deleteCourse(this.courseToDelete.idCourse).subscribe(
-        () => {
-          console.log('Deleted course:', this.courseToDelete);
-          this.loadCourses();
-        },
-        (error: any) => {
-          console.error('Error deleting course:', error);
-        }
-      );
+
+          console.log('Deleted image for course:', this.courseToDelete!.idCourse);
+  
+          this.coursesService.deleteCourse(this.courseToDelete!.idCourse).subscribe(
+            () => {
+
+              this.http.delete(`http://localhost:8089/image/delete/${this.courseToDelete!.idCourse}`).subscribe(
+                () => { });
+              console.log('Deleted course:', this.courseToDelete);
+              this.loadCourses();
+            },
+            (error: any) => {
+              console.error('Error deleting course:', error);
+              this.loadCourses(); 
+            }
+          );
+     
     }
+  
     $('#deleteModal').modal('hide');
   }
 
