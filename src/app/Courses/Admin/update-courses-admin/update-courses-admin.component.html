@@ -1,1 +1,29 @@
-<p>update-courses-admin works!</p>
+<div class="container mt-4">
+    <h2 class="mb-4">Update Course</h2>
+    <form (submit)="updateCourse()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Course Name:</label>
+        <input type="text" id="name" [(ngModel)]="existingCourse.nameCourse" name="name" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea id="description" [(ngModel)]="existingCourse.description" name="description" class="form-control" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="price" class="form-label">Price:</label>
+        <div class="input-group">
+          <span class="input-group-text">$</span>
+          <input type="number" id="price" [(ngModel)]="existingCourse.price" name="price" class="form-control" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">Image:</label>
+        <input type="file" id="image" (change)="onFileChange($event)" name="image" accept="image/*" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Update Course</button>&nbsp;
+        <a routerLink="/all" class="btn btn-secondary">Back to List</a>
+      </div>
+    </form>
+  </div>
+  

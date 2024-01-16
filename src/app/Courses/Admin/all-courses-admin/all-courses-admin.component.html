@@ -6,7 +6,7 @@
     <div class="mb-3">
         <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm">
       </div>
-      
+
     <div class="table-responsive"> 
       <table class="table table-striped">
         <thead class="thead-dark">
@@ -23,7 +23,7 @@
           <tr *ngFor="let course of filterCourses()">
             <td>{{ course.idCourse }}</td>
             <td>{{ course.nameCourse }}</td>
-            <td><img [src]="'/assets/' + course.imageCourse" class="img-thumbnail"></td>
+            <td><img  class="img-thumbnail" style="max-width: 50px; max-height: 50px;"></td>
             <td>{{ course.description }}</td>
             <td>{{ course.price }}</td>
             <td>
@@ -43,7 +43,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="deleteModalLabel">Delete Confirmation</h5>
-            <button type="button" class="close" (click)="deleteCourse()" aria-label="Close">
+            <button type="button" class="close"  (click)="closeDelete()" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -58,12 +58,12 @@
       </div>
     </div>
   
-    <nav >
-      <ul class="pagination justify-content-center">
-        <li class="page-item" *ngFor="let page of [1, 2, 3, 4, 5]">
-          <a class="page-link" href="#">{{ page }}</a>
-        </li>
-      </ul>
-    </nav>
+<nav>
+  <ul class="pagination justify-content-center">
+    <li class="page-item" *ngFor="let page of getTotalPages()">
+      <a class="page-link" (click)="changePage(page)" href="#">{{ page }}</a>
+    </li>
+  </ul>
+</nav>
   </div>
   
