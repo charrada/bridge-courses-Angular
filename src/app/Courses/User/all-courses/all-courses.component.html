@@ -1,102 +1,66 @@
 <div>
+    <div class="navbar">
+        <img src="assets/img/LogoBridge.png" width="242" height="57" class="logo">
+    </div>
 
-
-    
-        <div class="navbar">
-            <img src="assets/img/LogoBridge.png" width="242" height="57" class="logo">
+    <div style="position: relative; background: url('assets/img/bg-masthead.jpg') no-repeat center; background-size: cover; height: 697.6px; padding: 104px 0px; text-align: center;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.7); padding: 20px; text-align: center;">
+            <h2 style="color: black; font-weight: bold;">
+                <span>Improve your skills on your own</span><br>
+                <span>To prepare for a better future</span>
+            </h2>
+            <button class="btn btn-primary" type="button" style="background: rgb(175,47,100); font-weight: bold; border-radius: 45px; border-color: rgb(175,47,100);">
+                REGISTER NOW
+            </button>
         </div>
-    
+    </div>
 
-        <div style="position: relative; background: url('assets/img/bg-masthead.jpg') no-repeat center; background-size: cover; height: 697.6px; padding: 104px 0px; text-align: center;">
-           
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(255, 255, 255, 0.7); padding: 20px;  text-align: center;">
-
-                <h2 style="color: black; font-weight: bold;">
-                    <span>Improve your skills on your own</span><br>
-                    <span>To prepare for a better future</span>
-                </h2>
-            
-                <button class="btn btn-primary" type="button" style="background: rgb(175,47,100); font-weight: bold; border-radius: 45px; border-color: rgb(175,47,100);">
-                    REGISTER NOW
-                </button>
-            
-            </div>
-            
-        
-           
-           
-         </div>
-        
-        
     <br><br>
-    <button class="btn btn-primary" type="button" style="background: rgb(175,47,100); font-weight: bold; border-radius: 45px; border-color: rgb(175,47,100); float: right; margin-right: 60px; ">
+    
+    <button class="btn btn-primary" type="button" style="background: rgb(175,47,100); font-weight: bold; border-radius: 45px; border-color: rgb(175,47,100); float: right; margin-right: 60px;">
         View more
     </button>
+
+    <h2 style="float: left; margin-left: 60px; font-weight: bold;">Discover Our Courses</h2>
     
-    
-    
-    <h2 style="float: left; margin-left: 60px;font-weight: bold;">Discover Our Courses</h2>
     <br><br><br><br>
 
-
-
-
-    
-        <!-- Column -->
-        <div style="display: flex;
-        flex-wrap: wrap;
-        max-width: 960px;
-        justify-content: center;
-        gap: 16px;
-        margin: 0 auto;">
-          <div style="display: flex; flex-direction: column;"  *ngFor="let course of courses" >
-            <img [src]="courseImages[course.idCourse]" style="width: 300px; height: 200px; object-fit:cover; ">
+    <!-- Column -->
+    <div style="display: flex; flex-wrap: wrap; max-width: 960px; justify-content: center; gap: 16px; margin: 0 auto;">
+        <div style="display: flex; flex-direction: column;" *ngFor="let course of courses">
+            <img [src]="courseImages[course.idCourse]" style="width: 300px; height: 200px; object-fit: cover;">
             <h5 class="font-weight-medium mt-3">
                 <a href="#" class="text-decoration-none link" style="color: black;">{{ course.nameCourse }}</a>
-              </h5>
-              <p class="mt-3" style="color: #AF2F64;">{{ course.price }} DT/Month</p>
-          </div>
-           
+            </h5>
+            <p class="mt-3" style="color: #AF2F64;">{{ course.price }} DT/Month</p>
         </div>
-        
-        
-  
-  
-    
+    </div>
 
-      <br><br><br>
+    <br><br><br>
 
     <div class="contact-form" style="font-weight: bold; background-color: #f9b454; padding: 20px; border-radius: 45px; text-align: center; max-width: 1000px; margin: 0 auto;">
-
         <h3 style="color: black;">
             <span>Contact Us</span>
         </h3>
-    
         <br>
-    
         <form method="post" class="mx-auto" style="max-width: 60%; margin: 0 auto;">
             <div class="mb-3">
-                <label for="name" style="display:block; text-align: left;">NAME</label>
-
-                <input id="name" class="form-control" type="text" id="name-2" name="name" placeholder="Name" style=" float:center; border-radius: 40px; background: rgba(255,255,255,0.5); font-size: 14px; ;">
+                <label for="name" style="display: block; text-align: left;">NAME</label>
+                <input class="form-control" type="text" name="name" placeholder="Name" style="float: center; border-radius: 40px; background: rgba(255,255,255,0.5); font-size: 14px;">
             </div>
             <div class="mb-3">
-                <label for="email" style="display:block; text-align: left;">EMAIL</label>
-                <input id="email" class="form-control" type="email" id="email-2" name="email" placeholder="Email" style="border-radius: 40px; background: rgba(255,255,255,0.5); font-size: 14px;width: 100%;">
+                <label for="email" style="display: block; text-align: left;">EMAIL</label>
+                <input class="form-control" type="email" name="email" placeholder="Email" style="border-radius: 40px; background: rgba(255,255,255,0.5); font-size: 14px; width: 100%;">
             </div>
             <div class="mb-3">
-                <label for="message" style="display:block; text-align: left;">MESSAGE</label>
-                <textarea id="message" class="form-control" id="message1" name="message" rows="6" placeholder="Write this message" style="width: 100%; border-radius: 25px; background: rgba(248,248,248,0.5); height: 80px; font-size: 14px;"></textarea>
+                <label for="message" style="display: block; text-align: left;">MESSAGE</label>
+                <textarea class="form-control" name="message" rows="6" placeholder="Write this message" style="width: 100%; border-radius: 25px; background: rgba(248,248,248,0.5); height: 80px; font-size: 14px;"></textarea>
             </div>
             <div>
                 <button class="btn btn-primary mt-2" type="submit" style="width: 50%; background: rgb(175,47,100); font-weight: bold; border-color: rgb(175,47,100); font-size: 14px;">Message</button>
             </div>
         </form>
-        
     </div>
-    
-    
-    
-    <br><br>
 
+    <br><br>
 </div>
