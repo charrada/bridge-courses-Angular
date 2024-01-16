@@ -23,7 +23,7 @@
           <tr *ngFor="let course of filterCourses()">
             <td>{{ course.idCourse }}</td>
             <td>{{ course.nameCourse }}</td>
-            <td><img  class="img-thumbnail" style="max-width: 50px; max-height: 50px;"></td>
+            <td><img [src]="courseImages[course.idCourse]" class="img-thumbnail" style="max-width: 50px; max-height: 50px;"></td>
             <td>{{ course.description }}</td>
             <td>{{ course.price }}</td>
             <td>
